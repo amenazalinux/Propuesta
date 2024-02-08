@@ -1,0 +1,86 @@
+<html>
+<head>
+<script>
+// Función para mover el botón no a una posición aleatoria
+function moverNo() {
+  var botonNo = document.getElementById("no");
+  var x = Math.floor(Math.random() * window.innerWidth);
+  var y = Math.floor(Math.random() * window.innerHeight);
+  botonNo.style.left = x + "px";
+  botonNo.style.top = y + "px";
+}
+
+// Función para redirigir a una página al pulsar el botón si
+function redirigirSi() {
+  var url = "https://cdn0.frasess.net/es/posts/7/6/2/frases_de_amor_para_siempre_1267_orig.jpg"; // Puedes cambiar la url a la que quieras
+  window.location.href = url;
+}
+
+// Función para colocar el botón sí en el centro
+function centrarSi() {
+  var botonSi = document.getElementById("si");
+  var x = window.innerWidth / 2 - botonSi.offsetWidth / 2;
+  var y = window.innerHeight / 2 - botonSi.offsetHeight / 2;
+  botonSi.style.left = x + "px";
+  botonSi.style.top = y + "px";
+}
+
+// Función para colocar el botón no en una esquina
+function esquinarNo() {
+  var botonNo = document.getElementById("no");
+  var x = Math.random() < 0.5 ? 0 : window.innerWidth - botonNo.offsetWidth;
+  var y = Math.random() < 0.5 ? 0 : window.innerHeight - botonNo.offsetHeight;
+  botonNo.style.left = x + "px";
+  botonNo.style.top = y + "px";
+}
+
+// Llamar a las funciones al cargar la página
+window.onload = function() {
+  centrarSi();
+  esquinarNo();
+};
+</script>
+<style>
+/* Estilos para los botones */
+button {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+}
+
+/* Estilos para el template */
+body {
+  background-color: #c04c4c;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Media queries para adaptar el diseño según el ancho de la pantalla */
+@media (max-width: 600px) {
+  button {
+    width: 80px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  button {
+    width: 60px;
+    height: 30px;
+    font-size: 12px;
+  }
+}
+</style>
+</head>
+<body>
+<h1>¿Te gustaria ser mi novia❤️​?</h1>
+<button id="si" onclick="redirigirSi()">Sí❤️​</button>
+<button id="no" onclick="moverNo()">No😞​</button>
+</body>
+</html>
